@@ -1,8 +1,9 @@
 on: workflow_dispatch
-name: Hola Mundo Node
+name: deploy hola mundo
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: production  # Especifica el entorno de producción
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
