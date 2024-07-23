@@ -1,0 +1,23 @@
+on: workflow_dispatch
+name: deploy hola mundo
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: production  # Especifica el entorno de producción
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      - name: Print Hello World
+        run: echo "Hola Mundo"
