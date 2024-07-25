@@ -1,4 +1,4 @@
-name: Deploy to Production
+name: Deploy to Production Fail
 
 on:
   push:
@@ -25,6 +25,9 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Fail the pipeline (test)
+        run: exit 1
 
       - name: Deploy to Production
         run: |
